@@ -94,79 +94,56 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2">
         <h3>Entre em contato</h3>
-        <br>
-      </div>
-      <div class="col-lg-8 col-lg-offset-2">
-        <form enctype="text/plain" method="post" name="formContato" class>
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group">
-                  <label for="form_email">Email</label>
-                  <input id="email" type="email" name="email" class="form-control" placeholder="email">
-                </div>
-              </div>
-            </div>  
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="form_name">Nome Completo (opcional)</label>
-                  <input id="nome" type="text" name="nome" class="form-control" placeholder="Nome completo">
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-9">
-                <div class="form-group">
-                  <label for="form_phone">Telefone (opcional)</label>
-                  <input id="telefone" type="tel" name="telefone" class="form-control" placeholder="Telefone (Pode ser seu celular)">
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-9">
-                <div class="form-group">
-                  <label for="form_message">O que deseja saber (opcional)</label>
-                  <textarea id="mensagem" name="mensagem" class="form-control" placeholder="Sua mensagem" rows="4"></textarea>
-                </div>
-              </div>
-              <div class="col-md-12">
-                <input type="submit" class="btn btn-success btn-send" value="Enviar mensagem">
-              </div>
-            </div>
-        </form>
       </div>
     </div>
-
-  </div>
-  <hr />
-    <div class="container">
+    <div>
+      <form>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Email">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="nome">Nome</label>
+            <input type="password" class="form-control" id="nome" placeholder="Nome (opcional)">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label for="descricao">Textarea</label>
+            <textarea class="form-control" id="descricao" placeholder="O que deseja saber"></textarea>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
+    </div>
 </div>
-  <!-- Footer -->
-  <footer class="py-3 bg-dark">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-sm-3 col-md-3" id="icone-wa">
-          <img class="img-fluid rounded" src="img/wa_icone.png" width=25em alt="telefone whats app 11-98402.2526"> <a class="m-0 text-center text-white" href="https://api.whatsapp.com/send?phone=5511981207355&text=Ola">11-98402.2526</a>
+
+<hr />
+<!-- Footer -->
+      <footer class="py-3 bg-dark">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-4 col-sm-4 col-md-4" id="icone-wa">
+              <a href="https://api.whatsapp.com/send?phone=5511981207355&text=Ola"><img class="img-fluid rounded" src="img/wa_icone.png" width=25em alt="telefone whats app 11-98402.2526"></a> 
+              <a class="m-0 text-center text-white" href="https://api.whatsapp.com/send?phone=5511981207355&text=Ola">11-98402.2526</a>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4" id="icone-rede-social">
+              <a href="http://www.instagram.com/anna_k_store"><img class="img-fluid rounded" src="img/instagram.ico" width=30em alt="instragram @anna_k_store"></a>
+              <a href="http://www.facebook.com/annakstore"><img class="img-fluid rounded" src="img/fb.ico" width=25em alt="facebook.com/annakstore"></a>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+              <a target="_blank" class="text-white" href="mailto:storeannak@gmail.com">storeannak@gmail.com</a>
+            </div>
+          </div>
         </div>
+        <!-- /.container -->
+      </footer>
 
-        <div class="col-xs-12 col-sm-3 col-md-3 " id="icone-rede-social">
-          <a href="http://www.instagram.com/anna_k_store"><img class="img-fluid rounded" src="img/instagram.ico" width=30em alt="instragram @anna_k_store"></a>
-          <a href="http://www.facebook.com/annakstore"><img class="img-fluid rounded" src="img/fb.ico" width=25em alt="facebook.com/annakstore"></a>
-        </div>
-
-        <div class="col-xs-12 col-sm-6 col-md-6">
-          <a target="_blank" class="text-white" href="mailto:storeannak@gmail.com">storeannak@gmail.com</a>
-        </div>
-
-      </div>
-    </div>
-    <!-- /.container -->
-  </footer>
-
-  <!-- Bootstrap core JavaScript -->
-  <script src="js/jquery/jquery.min.js"></script>
-  <script src="js/popper/popper.min.js"></script>
-  <script src="js/bootstrap/bootstrap.min.js"></script>
+      <!-- Bootstrap core JavaScript -->
+      <script src="js/jquery/jquery.min.js"></script>
+      <script src="js/popper/popper.min.js"></script>
+      <script src="js/bootstrap/bootstrap.min.js"></script>
 
 </body>
 
