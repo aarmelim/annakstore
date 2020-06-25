@@ -2,7 +2,7 @@
   $servidor = 'mysql04.kci1.hospedagemdesites.ws';
   $usuario  = 'kci5';
   $senha    = 'jrkbt00@@';
-  $banco    = 'annakstore';
+  $banco    = 'kci5';
   $conecta  = mysqli_connect($servidor, $usuario, $senha, $banco);
 
   if (mysqli_connect_errno()) {
@@ -20,5 +20,5 @@
 //*  $servidor = 'mysql04.kci1.hospedagemdesites.ws';
 //*  $usuario  = 'kci5';
 //*  $senha    = 'jrkbt00@@';
-//*  $banco    = 'annakstore';
+//*  $banco    = 'kci5';
 ?>

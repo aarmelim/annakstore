@@ -28,7 +28,7 @@
 
      if($operacao_insercao){
          $retorno["sucesso"] = true;
-         $retorno["mensagem"] = "Obrigada pela mensagem. Em breve entrarei em contato.";
+         $retorno["mensagem"] = "Obrigada. Sua mensagem foi enviada com sucesso. Em breve entrarei em contato.";
      } else {
          $retorno["sucesso"] = false;
          $retorno["mensagem"] = "Estamos com um problema para registrar sua mensagem e já estamos atuando para corrigí-lo. Favor tentar um pouco mais tarde !!";
