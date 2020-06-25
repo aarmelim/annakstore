@@ -31,7 +31,7 @@
          $retorno["mensagem"] = "Obrigada pela mensagem. Em breve entrarei em contato.";
      } else {
          $retorno["sucesso"] = false;
-         $retorno["mensagem"] = "Houve um erro. Tente mais tarde !!";
+         $retorno["mensagem"] = "Estamos com um problema para registrar sua mensagem e já estamos atuando para corrigí-lo. Favor tentar um pouco mais tarde !!";
      }
   }
 ?>
@@ -69,10 +69,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="default.htm">Home<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="produtos.php">Produtos</a>
+              <a class="nav-link" href="index.php">Home<span class="sr-only">(current)</span></a>
             </li>
           </ul>
         </div>
