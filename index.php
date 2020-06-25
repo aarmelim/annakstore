@@ -10,14 +10,40 @@
   gtag('js', new Date());
   gtag('config', 'UA-107251954-1');
 </script>
-<html lang="en">
+
+<?php require_once("conexao/conexao.php"); 
+
+  if ( isset($_POST["enviar"]) ) {
+     $email = $_POST["email"];
+     $nome = utf8_decode($_POST["nome"]);
+     $descricao = utf8_decode($_POST["descricao"]);
+     
+     $inserir  = "INSERT INTO email ";
+     $inserir  .= "(email, nome, descricao) ";
+     $inserir  .= "VALUES ";
+     $inserir  .= "('$email', '$nome', '$descricao')";
+
+     $retorno = array();
+     $operacao_insercao = mysqli_query ($conecta, $inserir);
+
+     if($operacao_insercao){
+         $retorno["sucesso"] = true;
+         $retorno["mensagem"] = "Obrigada pela mensagem. Em breve entrarei em contato.";
+     } else {
+         $retorno["sucesso"] = false;
+         $retorno["mensagem"] = "Houve um erro. Tente mais tarde !!";
+     }
+  }
+?>
+
+<html lang="pt-br">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Anna K Store - Loja de roupas femininas">
   <meta name="author" content="Anna K Store">
-
+  <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
   <title>Anna K. Store</title>
 
   <!-- Bootstrap core CSS -->
@@ -61,7 +87,6 @@
       </div>
     </div>
   </header>
-  <hr />
 
   <div class="container">
 
@@ -96,25 +121,31 @@
         <h3>Entre em contato</h3>
       </div>
     </div>
-    <div>
-      <form>
+    <div id="formulario_email">
+      <form action="index.php" method="post">
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="Email">
+            <input type="email" class="form-control" id="email" name="email" placeholder="Email">
           </div>
           <div class="form-group col-md-6">
             <label for="nome">Nome</label>
-            <input type="password" class="form-control" id="nome" placeholder="Nome (opcional)">
+            <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome (opcional)">
           </div>
         </div>
         <div class="form-row">
           <div class="form-group col-md-12">
-            <label for="descricao">Textarea</label>
-            <textarea class="form-control" id="descricao" placeholder="O que deseja saber"></textarea>
+            <label for="descricao">Mensagem</label>
+            <textarea class="form-control" name="descricao" id="descricao" placeholder="Deixe seus comentários (opcional)"></textarea>
           </div>
         </div>
-        <button type="submit" class="btn btn-primary">Enviar</button>
+        <?php
+          if (isset($retorno['mensagem'])){
+            echo "<div><p class='font-italic text-monospace'>" . $retorno['mensagem'] . "</p></div>";  
+          }
+        ?>
+        <button type="submit" name="enviar" class="btn btn-primary">Enviar</button>
+
       </form>
     </div>
 </div>
@@ -125,15 +156,25 @@
         <div class="container">
           <div class="row">
             <div class="col-xs-4 col-sm-4 col-md-4" id="icone-wa">
-              <a href="https://api.whatsapp.com/send?phone=5511981207355&text=Ola"><img class="img-fluid rounded" src="img/wa_icone.png" width=25em alt="telefone whats app 11-98402.2526"></a> 
-              <a class="m-0 text-center text-white" href="https://api.whatsapp.com/send?phone=5511981207355&text=Ola">11-98402.2526</a>
+              <a target="_blank" href="https://api.whatsapp.com/send?phone=5511984022526&text=Ola, gostaria de informações sobre algumas peças">
+                <img class="img-fluid rounded" src="img/wa_icone.png" width=25em alt="telefone whats app 11-98402.2526">
+              </a> 
+              <a target="_blank" class="m-0 text-center text-white" href="https://api.whatsapp.com/send?phone=5511984022526&text=Ola">
+                11-98402.2526
+              </a>
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4" id="icone-rede-social">
-              <a href="http://www.instagram.com/anna_k_store"><img class="img-fluid rounded" src="img/instagram.ico" width=30em alt="instragram @anna_k_store"></a>
-              <a href="http://www.facebook.com/annakstore"><img class="img-fluid rounded" src="img/fb.ico" width=25em alt="facebook.com/annakstore"></a>
+              <a href="http://www.instagram.com/anna_k_store">
+                <img class="img-fluid rounded" src="img/instagram.ico" width=30em alt="instragram @anna_k_store">
+              </a>
+              <a href="http://www.facebook.com/annakstore">
+                <img class="img-fluid rounded" src="img/fb.ico" width=25em alt="facebook.com/annakstore">
+              </a>
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4">
-              <a target="_blank" class="text-white" href="mailto:storeannak@gmail.com">storeannak@gmail.com</a>
+              <a target="_blank" class="text-white" href="mailto:storeannak@gmail.com">
+                storeannak@gmail.com
+              </a>
             </div>
           </div>
         </div>
